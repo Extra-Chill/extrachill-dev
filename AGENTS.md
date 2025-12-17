@@ -34,9 +34,8 @@ WordPress plugin providing development environment overrides for the Extra Chill
 ### Additional Development Overrides
 
 #### Stripe Test API Keys
-- Provides configurable test API keys for Stripe integration
-- Define `EXTRACHILL_DEV_STRIPE_SECRET_KEY` and `EXTRACHILL_DEV_STRIPE_PUBLISHABLE_KEY` in `wp-config.php`
-- Falls back to placeholders if not defined
+- Provides test API keys for Stripe integration out-of-the-box
+- Keys are included locally for immediate local development use
 - Only active in local environments
 
 #### Cloudflare Turnstile Bypass

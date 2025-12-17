@@ -31,14 +31,7 @@ $local_paths = array(
 ```
 
 ### Stripe Test Keys
-For local development, define your Stripe test API keys in your `wp-config.php`:
-
-```php
-define('EXTRACHILL_DEV_STRIPE_SECRET_KEY', 'sk_test_...');
-define('EXTRACHILL_DEV_STRIPE_PUBLISHABLE_KEY', 'pk_test_...');
-```
-
-If not defined, placeholder keys will be used (you'll need to replace them with actual test keys).
+Stripe test API keys are provided out-of-the-box for local development. No configuration required.
 
 ### Turnstile Bypass
 The Turnstile verification is automatically bypassed in local environments.
