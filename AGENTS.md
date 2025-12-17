@@ -34,8 +34,8 @@ WordPress plugin providing development environment overrides for the Extra Chill
 ### Additional Development Overrides
 
 #### Stripe Test API Keys
-- Provides test API keys for Stripe integration out-of-the-box
-- Keys are included locally for immediate local development use
+- Provides flexible test API key configuration for local development
+- Supports local config file (gitignored), wp-config constants, or placeholder fallbacks
 - Only active in local environments
 
 #### Cloudflare Turnstile Bypass
