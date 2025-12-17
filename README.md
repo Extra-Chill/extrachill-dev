@@ -16,8 +16,9 @@ This plugin provides URL overrides for local development environments, allowing 
 
 The plugin only activates overrides when `WP_ENVIRONMENT_TYPE === 'local'` is defined.
 
-## Customization
+## Configuration
 
+### URL Overrides
 Modify the URL mappings in `inc/core/url-overrides.php` to match your local setup:
 
 ```php
@@ -28,3 +29,16 @@ $local_paths = array(
     // ... etc
 );
 ```
+
+### Stripe Test Keys
+For local development, define your Stripe test API keys in your `wp-config.php`:
+
+```php
+define('EXTRACHILL_DEV_STRIPE_SECRET_KEY', 'sk_test_...');
+define('EXTRACHILL_DEV_STRIPE_PUBLISHABLE_KEY', 'pk_test_...');
+```
+
+If not defined, placeholder keys will be used (you'll need to replace them with actual test keys).
+
+### Turnstile Bypass
+The Turnstile verification is automatically bypassed in local environments.

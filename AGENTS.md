@@ -5,7 +5,7 @@ WordPress plugin providing development environment overrides for the Extra Chill
 ## Overview
 
 **Plugin Name**: Extra Chill Dev Tools
-**Version**: 0.1.0
+**Version**: 0.2.0
 **Network**: true (network-activated)
 **Purpose**: Development environment URL overrides for local development
 
@@ -31,11 +31,26 @@ WordPress plugin providing development environment overrides for the Extra Chill
   - Docs: `/docs/`
   - Horoscope: `/horoscope/`
 
+### Additional Development Overrides
+
+#### Stripe Test API Keys
+- Provides configurable test API keys for Stripe integration
+- Define `EXTRACHILL_DEV_STRIPE_SECRET_KEY` and `EXTRACHILL_DEV_STRIPE_PUBLISHABLE_KEY` in `wp-config.php`
+- Falls back to placeholders if not defined
+- Only active in local environments
+
+#### Cloudflare Turnstile Bypass
+- Bypasses Turnstile verification for local development
+- Automatically enabled when `WP_ENVIRONMENT_TYPE === 'local'`
+- Allows testing forms without CAPTCHA requirements
+
 ## Architecture
 
 ### File Organization
 - **extrachill-dev.php** - Main plugin file with initialization
 - **inc/core/url-overrides.php** - URL override filter implementation
+- **inc/core/stripe-overrides.php** - Stripe test key overrides
+- **inc/core/turnstile-overrides.php** - Turnstile bypass implementation
 
 ### Loading Pattern
 - Direct `require_once` include for core functionality
@@ -44,7 +59,9 @@ WordPress plugin providing development environment overrides for the Extra Chill
 
 ## Development Usage
 
-This plugin is automatically activated in local development environments to provide proper URL resolution for multisite testing. No additional configuration is required - it works transparently with the existing `ec_site_url_override` filter system.
+This plugin is automatically activated in local development environments to provide proper URL resolution for multisite testing. No additional configuration is required for URL overrides - it works transparently with the existing `ec_site_url_override` filter system.
+
+For Stripe testing, define your test API keys in `wp-config.php` as described above. Turnstile verification is automatically bypassed in local environments.
 
 ## Security Notes
 
