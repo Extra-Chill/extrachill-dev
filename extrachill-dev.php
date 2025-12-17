@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Extra Chill Dev Tools
  * Description: Development environment overrides for Extra Chill Platform
- * Version: 0.1.0
+ * Version: 0.2.0
  * Author: Chris Huber
  * Network: true
  */
