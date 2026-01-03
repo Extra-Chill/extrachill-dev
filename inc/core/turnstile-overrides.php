@@ -9,4 +9,6 @@
 
 defined( 'ABSPATH' ) || exit;
 
-add_filter( 'extrachill_bypass_turnstile_verification', '__return_true' );
+if ( defined( 'WP_ENVIRONMENT_TYPE' ) && WP_ENVIRONMENT_TYPE === 'local' ) {
+	add_filter( 'extrachill_bypass_turnstile_verification', '__return_true' );
+}

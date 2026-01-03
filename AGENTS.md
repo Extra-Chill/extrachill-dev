@@ -5,7 +5,7 @@ WordPress plugin providing development environment overrides for the Extra Chill
 ## Overview
 
 **Plugin Name**: Extra Chill Dev Tools
-**Version**: 0.2.0
+**Version**: 0.2.1
 **Network**: true (network-activated)
 **Purpose**: Development environment URL overrides for local development
 

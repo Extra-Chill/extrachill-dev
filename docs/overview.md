@@ -25,6 +25,8 @@ This plugin is essential for local WordPress development:
 ## Key Features
 
 - **Automatic URL Override**: Rewrites all site URLs to local equivalents
+- **Stripe Test Keys**: Provides flexible test API key configuration for local development
+- **Turnstile Bypass**: Automatically bypasses Cloudflare Turnstile verification locally
 - **Environment Detection**: Only activates when `WP_ENVIRONMENT_TYPE === 'local'`
 - **Multisite Support**: Handles all 9 network sites with proper URL mapping
 - **No Production Impact**: Safe to leave network-activated; has zero effect on production
@@ -44,6 +46,7 @@ All 9 network sites map to subpaths under base `https://testing-grounds.local`:
 | Stream | stream.extrachill.com | https://testing-grounds.local/stream |
 | Newsletter | newsletter.extrachill.com | https://testing-grounds.local/newsletter |
 | Docs | docs.extrachill.com | https://testing-grounds.local/docs |
+| Horoscope | horoscope.extrachill.com | https://testing-grounds.local/horoscope |
 
 ## Architecture
 
@@ -54,14 +57,18 @@ extrachill-dev/
 ├── extrachill-dev.php          # Main plugin file, initialization
 └── inc/
     └── core/
-        └── url-overrides.php    # URL override filter implementation
+        ├── url-overrides.php       # URL override filter implementation
+        ├── stripe-overrides.php    # Stripe test key overrides
+        └── turnstile-overrides.php # Turnstile bypass implementation
 ```
 
 ### Loading Pattern
 
-- Main plugin file includes URL override handler
-- Override handler uses `ec_site_url_override` filter
-- Only modifies URLs when `WP_ENVIRONMENT_TYPE === 'local'`
+- Main plugin file includes all three override handlers
+- URL override uses `ec_site_url_override` filter
+- Stripe override provides test API keys via filter or local config
+- Turnstile override bypasses captcha verification
+- All overrides only activate when `WP_ENVIRONMENT_TYPE === 'local'`
 
 ## Customization
 

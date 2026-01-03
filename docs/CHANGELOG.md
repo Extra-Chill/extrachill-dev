@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 0.2.1
+
+- Improved Stripe override system with support for local `stripe-config.php` file
+- Added explicit environment check for Cloudflare Turnstile bypass
+- Updated documentation for new Stripe configuration options
+- Fixed build directory tracking in git (.gitignore update)
+- General documentation alignment across overview and AGENTS.md
+
 ## Version 0.2.0
 
 - Added Stripe test API key overrides for local development
