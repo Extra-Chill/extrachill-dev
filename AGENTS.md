@@ -5,7 +5,7 @@ WordPress plugin providing development environment overrides for the Extra Chill
 ## Overview
 
 **Plugin Name**: Extra Chill Dev Tools
-**Version**: 0.2.1
+**Version**: 0.2.2
 **Network**: true (network-activated)
 **Purpose**: Development environment URL overrides for local development
 
@@ -47,6 +47,7 @@ WordPress plugin providing development environment overrides for the Extra Chill
 
 ### File Organization
 - **extrachill-dev.php** - Main plugin file with initialization
+- **inc/core/analytics-overrides.php** - Analytics/GTM development bypass
 - **inc/core/url-overrides.php** - URL override filter implementation
 - **inc/core/stripe-overrides.php** - Stripe test key overrides
 - **inc/core/turnstile-overrides.php** - Turnstile bypass implementation

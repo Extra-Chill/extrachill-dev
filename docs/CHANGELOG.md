@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.2.2
+
+- Added Google Tag Manager (GTM) development bypass to prevent polluting production analytics locally
+- Implemented `extrachill_disable_gtm` filter in `inc/core/analytics-overrides.php`
+- Organized overrides to include the new analytics bypass in main plugin file
+
 ## Version 0.2.1
 
 - Improved Stripe override system with support for local `stripe-config.php` file
